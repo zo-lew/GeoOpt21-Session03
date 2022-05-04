@@ -13,8 +13,8 @@ import drawutils as du
 #global variables for meshwalker component
 walkerGraph = None
 @hops.component(
-    "/meshwalker",
-    name = "meshwalker",
+    "/meshToGraph",
+    name = "meshToGraph",
     inputs=[
         hs.HopsMesh("Input Mesh", "M", "Mesh"),
         hs.HopsBoolean("Plot", "P", "Plot", optional=True)
@@ -32,7 +32,7 @@ def meshToGraph(mesh, plot=False):
     print(G)
     if plot:  
         du.plotGraph(G)
-        #du.plotGraphSave(G)
+        du.plotGraphSave(G)
     
     return str(G)
 
